@@ -1,19 +1,13 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "functions": {
-    "api/mcp.ts": {
-      "maxDuration": 30
+    "app/api/mcp/route.ts": {
+      "maxDuration": 60
     }
   },
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/api/mcp"
-    },
-    {
-      "source": "/((?!api).*)",
-      "destination": "/api/mcp"
-    }
-  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
   "headers": [
     {
       "source": "/api/(.*)",
@@ -24,11 +18,11 @@
         },
         {
           "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, OPTIONS"
+          "value": "GET, POST, PUT, DELETE, OPTIONS"
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization"
+          "value": "Content-Type, Authorization, X-Requested-With"
         }
       ]
     }
