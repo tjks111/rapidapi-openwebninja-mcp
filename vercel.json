@@ -1,7 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "app/api/mcp/route.ts": {
+      "maxDuration": 60
+    }
+  },
   "env": {
-    "NODE_ENV": "production"
+    "NODE_ENV": "production",
+    "NEXT_PUBLIC_SERVICE_MODE": "server"
   },
   "headers": [
     {
