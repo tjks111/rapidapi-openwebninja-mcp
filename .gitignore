@@ -179,3 +179,4 @@ yarn-error.log*
 
 # TernJS port file
 .tern-port
+.vercel
